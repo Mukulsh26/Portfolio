@@ -89,21 +89,37 @@ export const Contact = () => {
                         <input type="email" name="email_id" required value={formDetails.email_id} placeholder="Email Address" onChange={(e) => onFormUpdate('email_id', e.target.value)} />
                       </Col>
                       <Col size={12} sm={6} className="px-1">
-                        <input type="tel" name="phone" required value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)} />
+                        <input
+                          type="tel"
+                          name="phone"
+                          pattern="[0-9]*"
+                          maxLength={10}
+                          required
+                          value={formDetails.phone}
+                          placeholder="Phone No."
+                          onChange={(e) => {
+                            // Ensure only numeric values are set
+                            const value = e.target.value.replace(/\D/g, '');
+                            if (value.length <= 10) {
+                              onFormUpdate('phone', value);
+                            }
+                          }}
+                        />
+
                       </Col>
                       <Col size={12} className="px-1">
                         <textarea rows="6" name="message" required value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
                       </Col>
                     </Row>
-                      {
-                        status.message &&
-                        <Col>
-                          <p style={getStatusStyles()}>
-        {status.message}
-      </p>
-                        </Col>
-                      }
-                      <button type="submit"><span>{buttonText}</span></button>
+                    {
+                      status.message &&
+                      <Col>
+                        <p style={getStatusStyles()}>
+                          {status.message}
+                        </p>
+                      </Col>
+                    }
+                    <button type="submit"><span>{buttonText}</span></button>
                   </form>
                 </div>}
             </TrackVisibility>
