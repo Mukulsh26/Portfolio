@@ -2,7 +2,7 @@ import { useState } from "react";
 import emailjs from 'emailjs-com'; // Import EmailJS library
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
-import { EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, EMAIL_JS_PUBLIC_KEY } from "../constant";
+import { EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, EMAIL_JS_PUBLIC_KEY } from "../constants";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
@@ -14,6 +14,11 @@ export const Contact = () => {
     phone: '',
     message: ''
   };
+
+  const serviceId = process.env.REACT_APP_EMAIL_JS_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAIL_JS_TEMPLATE_ID;
+  const publicKey = process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY;
+
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState('Send');
@@ -31,7 +36,7 @@ export const Contact = () => {
     setButtonText("Sending...");
 
     // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_PUBLIC_KEY' with actual values
-    emailjs.send(EMAIL_JS_SERVICE_ID, EMAIL_JS_TEMPLATE_ID, formDetails, EMAIL_JS_PUBLIC_KEY)
+    emailjs.send(serviceId, templateId, formDetails, publicKey)
       .then((response) => {
         console.log('Email sent successfully:', response);
         setStatus({ success: true, message: 'Message sent successfully' });
