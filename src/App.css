@@ -74,6 +74,29 @@ input:focus, textarea:focus, select:focus {
 	}
 }
 
+@media (max-width:450px) {
+	.copyright h4 {
+    font-size: 12px;
+    margin-bottom: 0px;
+	}
+  .banner {
+    margin: 10px;
+  }
+  .skill {
+    margin: 10px;
+  }
+  .project {
+    margin: 10px;
+  }
+  .contact {
+    margin: 10px;
+  }
+  .social-icon a {
+    width: 30px!important;
+    height: 30px!important;
+  }
+}
+
 p.success {
 	color: green;
 }
