@@ -35,7 +35,7 @@ export const Skills = () => {
                 <div className="col-12">
                     <div className="skill-bx wow zoomIn">
                         <h2>Skills</h2>
-                        <p>Proficient in building responsive and interactive user interfaces using HTML5, CSS3, JavaScript (ES6+), and popular frameworks such as React, Next, BootStrap, as well as designing and developing scalable and secure server-side applications using languages like Node.js, with familiarity with popular frameworks such as Express, and knowledge of database management systems including MySQL, MongoDB.</p>
+                        <p>Proficient in building responsive and interactive user interfaces using HTML5, CSS3, JavaScript (ES6+), and popular frameworks such as React, Next, BootStrap, as well as designing and developing scalable and secure server-side applications using languages like Node.js, Java with familiarity with popular frameworks such as Express, SpringBoot and knowledge of database management systems including MySQL, MongoDB.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
                                 <img src={meter1} alt="Image" />
@@ -60,6 +60,14 @@ export const Skills = () => {
                             <div className="item">
                                 <img src={meter3} alt="Image" />
                                 <h5>Express.js</h5>
+                            </div>
+                            <div className="item">
+                                <img src={meter3} alt="Image" />
+                                <h5>Java</h5>
+                            </div>
+                            <div className="item">
+                                <img src={meter3} alt="Image" />
+                                <h5>SpringBoot</h5>
                             </div>
                             <div className="item">
                                 <img src={meter3} alt="Image" />
