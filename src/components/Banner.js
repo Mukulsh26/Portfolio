@@ -30,7 +30,7 @@ export const Banner = () => {
     return `${years}.${months}`;
   };
 
-  const experience = calculateExperience('2023-04-01');
+  const experience = calculateExperience('2022-10-01');
 
   useEffect(() => {
     let ticker = setInterval(() => {
